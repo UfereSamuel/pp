@@ -23,7 +23,7 @@
     "morgan": "^1.8.1",
     "parse": "~1.8.0",
     "parse-dashboard": "1.0.25",
-    "parse-server": "2.2.7",
+    "parse-server": "*",
     "path": "^0.12.7",
     "underscore": "^1.8.3"
   },
