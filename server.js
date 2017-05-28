@@ -76,8 +76,8 @@ if (process.env.APNS_ENABLE) {
 
 var api = new ParseServer({
 	
-	 // databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
-  databaseURI: databaseUri || 'mongodb://heroku_lb7f2mfr:ec53dpcibrd7a80q0vm3p03gk9@ds149481.mlab.com:49481/heroku_lb7f2mfr',
+  databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
+  //databaseURI: databaseUri || 'mongodb://heroku_lb7f2mfr:ec53dpcibrd7a80q0vm3p03gk9@ds149481.mlab.com:49481/heroku_lb7f2mfr',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: AppConfig.APP_ID,
   masterKey: AppConfig.MASTER_KEY,
