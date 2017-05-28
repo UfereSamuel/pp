@@ -57,6 +57,23 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
+var pushConfig = {};
+
+if (process.env.GCM_SENDER_ID && process.env.GCM_API_KEY) {
+    pushConfig['android'] = { senderId: process.env.GCM_SENDER_ID || '',
+                              apiKey: process.env.GCM_API_KEY || ''};
+}
+
+if (process.env.APNS_ENABLE) {
+    pushConfig['ios'] = [
+        {
+            pfx: 'ParsePushDevelopmentCertificate.p12', // P12 file only
+            bundleId: 'beta.codepath.parsetesting',  // change to match bundleId
+            production: false // dev certificate
+        }
+    ]
+}
+
 var api = new ParseServer({
 	
 	 // databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
@@ -64,6 +81,7 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: AppConfig.APP_ID,
   masterKey: AppConfig.MASTER_KEY,
+  push: pushConfig,
   serverURL: AppConfig.SERVER_URL
   // liveQuery: {
     // classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
