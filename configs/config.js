@@ -1,8 +1,9 @@
 module.exports = {
-    AppName: "Ararocks",
-    APP_ID: process.env.APP_ID || 'ara-advisors',
-    MASTER_KEY: process.env.MASTER_KEY || 'ara-advisors',
-    SERVER_URL: process.env.SERVER_URL || 'https://ara-advisors.herokuapp.com/parse',
-    DASHBOARD_USER: process.env.DASHBOARD_USER || "ara-advisors",
-    DASHBOARD_PASS: process.env.DASHBOARD_PASS || "ara-advisors",
+    APP_NAME: "samuel",
+    APP_ID: process.env.APP_ID || 'tree-tracking',
+    MASTER_KEY: process.env.MASTER_KEY || 'fellowship',
+    SERVER_URL: process.env.SERVER_URL || 'https://tree-trackers.herokuapp.com/parse',
+    MONGODB_URI: process.env.MONGODB_URI || 'mongodb://heroku_p682jq5p:ra9n74deo1n36faeee66qlrtpu@ds135234.mlab.com:35234/heroku_p682jq5p',
+    DASHBOARD_USER: process.env.DASHBOARD_USER || "samuel",
+    DASHBOARD_PASS: process.env.DASHBOARD_PASS || "father200",
 }
